@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Descubra sua nacionalidade</h1>
+    <p>Qual é o seu nome? <input type="text" name="fodase" id="txtnome"></p>
+    <p>Voçe é de qual país? <input type="text" name="fodase" id="txtpais"></p>
+    <input type="button" value="Checar" onclick="checar()">
+    <div id="res"></div>
+    <script>
+      function checar() {
+        let nameinput = window.document.querySelector('input#txtnome') // DECLARANDO OS IDENTIFICADORES
+        let countryinput = window.document.querySelector('input#txtpais') // DECLARANDO OS IDENTIFICADORES
+        let res = window.document.querySelector('div#res') // PEGANDO OS IDENTIFICADORES
+
+        let nome = nameinput.value.toUpperCase() // PEGANDO AS RESPOSTAS DO USUÁRIO
+        let pais = countryinput.value.toUpperCase() // PEGANDO AS RESPOSTAS DO USUARIO 
+
+        res.innerHTML = `Olá!, ${nome} voçê é do pais: ${pais}` // COLOQUE NA TELA AS RESPOSTAS DO USUARIO E ADICIONA O COMENTARIO 
+        
+        if (pais === 'BRASIL') { // SE POR ACASO O PAIS FOR IGUAL A BRASIL, COLOQUE NA TELA O CODIGO ABAIXO
+            res.innerHTML += '<p> Voçê é <strong>Brasileiro!</strong>'
+        } else { // OU SE NAO FOR IGUAL A BRASIL COLOQUE O CODIGO ABAIXO
+            res.innerHTML += '<p> You are a <strong>Foreign!<//strong></p>'
+        }
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Numeros</title>
+    <style>
+         *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input{
+            display: block;
+            margin-bottom: 20px;
+            padding: 3px;
+        }
+
+        input#resultado{
+            background-color: blue;
+            color: white;
+            padding: 10px;
+        }
+
+        div#quadrado{
+            width: 250px;
+            height: 250px;
+            background-color: green;
+            text-align: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bolder;
+            font-size: 1.7rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando Valores</h1>
+    <input type="number" name="txtn1" id="texton1">
+    <input type="number" name="txtn2" id="texton2">
+    <input type="button" value="Somar Numeros" onclick="somar()" id="resultado">
+    <div  id="res">Resultado</div>
+    <div id="quadrado">
+        <p>Interaja!</p>
+    </div> 
+    <script>
+        function somar() {
+             var tn1 = window.document.getElementById('texton1')
+             var tn2 = window.document.getElementById('texton2')
+            var resultado = window.document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2 
+            resultado.innerHTML = `A soma entre o numero ${n1} e  ${n2} e igual a ${s}`
+        }
+    </script>
+    <script>
+        var a = window.document.getElementById('quadrado')
+
+        a.addEventListener('click' , clicar)
+        a.addEventListener('mouseenter', entrou)
+        a.addEventListener('mouseout', sair)
+
+        function clicar() {
+            a.innerHTML = 'Clicou!'
+            a.style.background = 'blue'
+        }
+
+        function sair() {
+            a.innerHTML = 'Saiu!'
+            a.style.background = 'green'
+        }
+
+        function entrou() {
+            a.innerHTML = 'Entrou'
+            a.style.background = 'red'
+        }
+    </script>
+</body>
+</html>

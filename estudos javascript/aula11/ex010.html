@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input{
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+        <form action="">
+            <label for="">Velocidade do Carro:</label><input type="number" name="fodase" id="txtvel">
+            <input type="button" value="Verificar" onclick="calcular()">
+            <div id="res"></div>
+        </form>
+    <script>
+            function calcular() {
+            var txtv = window.document.querySelector('input#txtvel') // SELECIONA O ELEMENTO INPUT COM ID 'txtvel'
+            var res = window.document.querySelector('div#res') // SELECIONA O ELEMENTO DIV COM ID 'res'
+            var vel = Number(txtv.value) // CONVERTE O VALOR DO INPUT DE STRING PARA NÚMERO (INTEIRO OU REAL)
+            res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel}</strong> Km/h</p>` // EXIBE NA TELA A VELOCIDADE INSERIDA
+            if (vel >  60) { // SE A VELOCIDADE FOR MAIOR QUE 60 COLOQUE UMA MENSAGEM DE MULTA 
+                res.innerHTML += '<p> Voçê esta <strong>MULTADO!</strong> por excesso de velocidade </p>'
+            } 
+            res.innerHTML += '<p>Dirija sempre com <strong>cinto de segurança!</strong></p>' // ADICIONA UMA MENSAGEM ADICIONAL NA TELA
+        }
+    </script>
+</body>
+</html>

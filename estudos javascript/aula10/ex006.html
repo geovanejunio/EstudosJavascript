@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area{
+            background-color: rgba(0, 128, 0, 0.822);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            font-weight: normal;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20pt;
+        }
+    </style>
+</head>
+<body>
+    <!-- O ONLICK REALIZA UMA FUNÇÃO -->
+    <div id="area" >
+        Interaja...
+        <!-- O EVENTO É O (ONCLICK) E QUANDO CLICA REALIZA UMA FUNÇÃO E -->
+    </div>
+
+    <!-- UMA FUNÇÃO É UM CONJUNTO DE CODIGOS QUE É EXECUTADO QUANDO UM EVENTO OCORRER -->
+    <script>
+
+        // QUANDO CLICAR NA DIV, VAI APARECER UMA MENSAGEM FALANDO QUE CLICOU
+
+        // QUANDO UMA VARIAVEL FICA FORA DO FUNCTION ESSA MESMA VARIAVEL SERVE PARA TODOS, SE COLOCAR DE DENTRO DA FUNCTION DARIA PROBLEMA DE MEMÓRIA 
+
+        var area = window.document.getElementById('area')
+        area.addEventListener('click' , clicar)
+        area.addEventListener('mouseenter' , entrar)
+        area.addEventListener('mouseout' , saiu)
+        function clicar() {
+            area.innerHTML = 'Voçe Clicou!'
+            area.style.background = 'blue'
+        }
+
+        function entrar() {
+            area.innerHTML = 'Voçe Entrou!'
+            area.style.background = 'red'
+        }
+
+        function saiu() {
+            area.innerHTML = 'Voçe Saiu!'
+            area.style.background = 'rgba(0, 128, 0, 0.822)'
+        }
+    </script>
+</body>
+</html>
